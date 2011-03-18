@@ -20,7 +20,7 @@ class RubyScript < UserScript
     if test_script?
       path_ary = @path.split("/")
       if index = path_ary.rindex("test")
-        test_path = File.join(*path_ary[0..-2])
+        test_path = File.join(*path_ary[0..index])
         lib_path  = File.join( *( path_ary[0..-2] +
                                   [".."] * (path_ary.length - index - 1) ) +
                                   ["lib"] )
